@@ -9,3 +9,14 @@ students = pd.read_csv(file_name)
 
 # Display the first few rows to understand the data
 students.head()# Upload the student dataset from your computer
+# Check how many rows and columns are in the dataset
+print("Dataset size:", students.shape)
+
+# Check whether there are any missing values
+print("\nMissing values:")
+print(students.isnull().sum())
+
+# Remove any repeated rows, if there are any
+students = students.drop_duplicates()
+
+print("\nUpdated dataset size:", students.shape)
