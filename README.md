@@ -29,3 +29,22 @@ plt.xlabel("Final Grade")
 plt.ylabel("Number of Students")
 
 plt.show()
+plt.figure(figsize=(8, 5))
+
+sns.regplot(
+    data=students,
+    x="G2",
+    y="G3",
+    scatter_kws={"alpha": 0.6}
+)
+
+plt.title("Relationship Between Second-Period and Final Grades")
+plt.xlabel("Second-Period Grade (G2)")
+plt.ylabel("Final Grade (G3)")
+
+plt.show()
+
+# Calculate the correlation between the two grades
+correlation = students["G2"].corr(students["G3"])
+
+print("Correlation between G2 and G3:", round(correlation, 2))
