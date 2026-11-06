@@ -20,3 +20,12 @@ print(students.isnull().sum())
 students = students.drop_duplicates()
 
 print("\nUpdated dataset size:", students.shape)
+plt.figure(figsize=(8, 5))
+
+sns.histplot(data=students, x="G3", bins=10, kde=True)
+
+plt.title("Distribution of Students' Final Grades")
+plt.xlabel("Final Grade")
+plt.ylabel("Number of Students")
+
+plt.show()
