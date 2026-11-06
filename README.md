@@ -48,3 +48,28 @@ plt.show()
 correlation = students["G2"].corr(students["G3"])
 
 print("Correlation between G2 and G3:", round(correlation, 2))
+# Choose the columns I want to compare
+selected_columns = [
+    "studytime",
+    "absences",
+    "failures",
+    "G1",
+    "G2",
+    "G3"
+]
+
+# Calculate the relationships between the selected columns
+correlation_matrix = students[selected_columns].corr()
+
+plt.figure(figsize=(9, 6))
+
+sns.heatmap(
+    correlation_matrix,
+    annot=True,
+    cmap="coolwarm",
+    fmt=".2f",
+    linewidths=0.5
+)
+
+plt.title("Heatmap of Student Performance Factors")
+plt.show()
